@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: white;
+        font-family: arial, sans-serif;
+    }
+    #container {
+        text-align: center;
+    }
+    h1 {
+        font-size: 32px;
+        color: #333;
+    }
+    #buttons {
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 18px;
+        color: #fff;
+        background-color: #4caf50;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: backround-color o.3s;
+    }
+    button:hover {
+        background-color: #4ca049;
+    }
+    #btnNo{
+        background-color: #f44336;
+    }
+    #btnNo:hover {
+        background-color: #d32f2f;
+    }
+    img{
+        margin-top: 30px;
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    </style>
+    <script>
+        function accionParaCuandoDigaQueSi(){
+            alert("¡Ya somos novios!");
+        }
+
+        function mueveElBoton(){
+            const width = window.innerWidth
+            const height = window.innerHeight
+
+            const newWhidth = Math.random() * width;
+            const newHeight = Math.random() * height;
+
+            const btnNo = document.getElementById("btnNo");
+            btnNo.style.position = "absolute";
+            btnNo.style.left = newWhidth + "px";
+            btnNo.style.top = newHeight + "px";
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h1>Querés ser mi novia?</h1>
+        <div id="buttons">
+            <button onclick="accionParaCuandoDigaQueSi()" id="btnSi">Sí</button>
+            <button id="btnNo" onmouseover="mueveElBoton()">No</button>
+        </div>
+        <img src="img/2.png" alt="" width="800">
+    </div>
+
+    <script>
+        function accionParaCuandoDigaQueSi(){
+            const respuesta = confirm("¿Estás segura de que quieres ser mi novia?");
+            if (respuesta) {
+                window.location.href = "opcionSi.html";
+            } else{
+                alert("Maldita lisiada")
+            }
+        }
+        
+        function mueveElBoton(){
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+
+            const newWhidth = Math.random()*width;
+            const newHeight = Math.random()*height;
+
+            const btnNo = document.getElementById("btnNo");
+            btnNo.style.position = "absolute";
+            btnNo.style.left = newWhidth + "px";
+            btnNo.style.top = newHeight + "px"        
+        }
+
+    </script>
+</body>
+</head>
+</html>
